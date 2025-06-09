@@ -34,6 +34,10 @@ t_node	*make_stack(char **array, int size);
 //parsers
 long	ft_atol(char *str);
 void	add_last(t_node **lst, long value);
+int		count_words(char *str);
+char	*make_string(char *str);
+char	**split(char *str);
+char	**free_strings(char **strings);
 
 //getters
 t_node	*get_closest_bigger(int value, t_node *lst);
@@ -74,13 +78,5 @@ int		is_space(char c);
 int		is_valid_number(char *str);
 int		is_valid_value(long value, t_node *stack);
 void	free_stack(t_node **lst);
-
-//split
-int		count_words(char *str);
-char	*make_string(char *str);
-char	**split(char *str);
-char	**free_strings(char **strings);
-
-void	fillArrayWithUniqueRandoms(int *array, int size);
 
 #endif
