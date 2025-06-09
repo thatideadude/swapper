@@ -1,5 +1,5 @@
 NAME		= push_swap
-SRCS		= getters.c getters_extras.c helpers.c makers.c movers.c movers_extras.c parsers.c parsers_extra.c pushers.c setters.c sorters.c main.c 
+SRCS		= getters.c getters_extras.c helpers.c makers.c movers.c movers_extras.c parsers.c parsers_extra.c pushers.c quitters.c setters.c sorters.c main.c 
 OBJS		= $(SRCS:.c=.o)
 CFLAGS		= -Wall -Werror -Wextra -g
 

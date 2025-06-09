@@ -79,4 +79,7 @@ int		is_valid_number(char *str);
 int		is_valid_value(long value, t_node *stack);
 void	free_stack(t_node **lst);
 
+//quitters
+int	exit_err(t_node *lst_a, t_node *lst_b, char **strings, int print);
+
 #endif

@@ -43,6 +43,8 @@ void	add_last(t_node **lst, long value)
 		free_stack(lst);
 		lst = NULL;
 		write(1, "error\n", 6);
+		write(3, "error\n", 6);
+		exit(3);
 		return ;
 	}
 	while ((*lst)->next)
@@ -50,6 +52,8 @@ void	add_last(t_node **lst, long value)
 		if ((*lst)-> value == value)
 		{
 			write(1, "error\n", 6);
+			write(3, "error\n", 6);
+			exit(1);
 			return ;
 		}
 		*lst = (*lst)->next;
