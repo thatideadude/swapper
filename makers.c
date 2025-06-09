@@ -28,47 +28,29 @@ t_node	*create_node(int value)
 	return (new);
 }
 
-t_node	*make_stack(char **array, int size)
+t_node *make_stack(char **array, int size)
 {
 	int		i;
+	long	value;
 	t_node	*start;
 	t_node	*current;
-	long	value;
 
-	if (!array || !array[0] || size < 1)
-		return (NULL);
-	value = ft_atol(array[0]);
-	if (!is_valid_number(array[0]) || !is_valid_value(value, NULL))
-	{
-		write(2, "Error\n", 6);
-		return (NULL);
-	}
-	start = create_node(value);
-	if (!start)
-		return (NULL);
-	current = start;
+	if (!array || !array[0] || size < 1) 
+		return (0);
 	i = 0;
-	while (++i < size)
+	value = ft_atol(array[0]);
+	if (!is_valid_number(array[0]) || !is_valid_value(value, NULL)) 
+		return (write(2, "Error\n", 6), NULL);
+	start = create_node(value);
+	current = start;
+	while (++i < size && start)
 	{
-		if (!is_valid_number(array[i]))
-		{
-			free_stack(&start);
-			write(2, "Error\n", 6);
-			return (NULL);
-		}
 		value = ft_atol(array[i]);
-		if (!is_valid_value(value, start))
-		{
-			free_stack(&start);
-			write(2, "Error\n", 6);
-			return (NULL);
-		}
-		current->next = create_node(value);
-		if (!current->next)
-		{
-			free_stack(&start);
-			return (NULL);
-		}
+		if (!is_valid_number(array[i]) 
+			|| !is_valid_value(value, start))
+			return (free_stack(&start), write(2, "Error\n", 6), NULL);
+		if (!(current->next = create_node(value))) 
+			return (free_stack(&start), NULL);
 		current = current->next;
 	}
 	return (start);

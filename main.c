@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_node	*lst_a;
 	t_node	*lst_b;
@@ -28,8 +28,8 @@ int main(int argc, char **argv)
 	}
 	else if (argc == 2 && count_words(argv[1]))
 	{
-			strings = split(argv[1]);
-			lst_a = make_stack(strings, count_words(argv[1]));
+		strings = split(argv[1]);
+		lst_a = make_stack(strings, count_words(argv[1]));
 	}
 	else
 		lst_a = make_stack(&argv[1], argc - 1);
